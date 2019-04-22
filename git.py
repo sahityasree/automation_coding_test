@@ -5,7 +5,7 @@ from subprocess import check_output
 # using username and password
 g = Github("sahitya.sreebhashyam@gmail.com", "Sahitya@05")
 
-
+print("hi")
 for repo in g.get_user().get_repos():
     print(repo.name)
     if(repo.name=="automation_coding_test"):
