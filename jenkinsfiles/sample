@@ -1,0 +1,45 @@
+pipeline {
+    agent { docker { 
+        // label 'superstudy'
+        image 'pradeepinmar/ss_devops'
+        args '-u root:sudo -v $HOME'} }
+    
+    parameters {
+  
+
+    string(name: 'GIT_BRANCH',
+            description: 'Set the Git Branch to deoploy',
+            defaultValue: 'master')
+			
+	string(name: 'GIT_COMMIT',
+            description: 'Set the Git Branch to deoploy',
+            defaultValue: 'none')
+	
+   
+  } // parameters
+ 
+    stages {
+        stage('checkout') {
+            
+            steps {
+                git branch: '${GIT_BRANCH}', url: 'git@github.com:sahityasree/automation_coding_test.git'
+                //checkout([$class: 'GitSCM', branches: [[name: '*/${GIT_BRANCH}']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'svcjenkins-inmar', url: 'https://github.com/inmar/superstudy-ui.git']]])
+            }
+        }
+		stage('run python') {
+			steps {
+				python git.py
+			}
+		}	
+       
+    }  //stages
+    post {
+           always {
+            script {
+                cleanWs deleteDirs: true
+            } //script
+           } //always
+
+   
+    } // post
+}
