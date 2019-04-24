@@ -23,6 +23,7 @@ pipeline {
 	stage('run python') {
 		steps {
 			python git.py
+			git branch: '${GIT_COMMIT}', url: 'git@github.com:sahityasree/automation_coding_test.git'
 			}
 		}	
        
