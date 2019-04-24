@@ -4,16 +4,14 @@ pipeline {
        } }
     
     parameters {
-  
-    string(name: 'GIT_BRANCH',
-            description: 'Set the Git Branch to deoploy',
-            defaultValue: 'master')
-			
-	string(name: 'GIT_COMMIT',
-            description: 'Set the Git Branch to deoploy',
-            defaultValue: 'none')
+    	string(name: 'GIT_BRANCH',
+		description: 'Set the Git Branch to deoploy',
+		defaultValue: 'master')
 	
-   
+    	string(name: 'GIT_COMMIT',
+		description: 'Set the Git Branch to deoploy',
+		defaultValue: 'none')
+	
   } // parameters
  
     stages {
