@@ -1,21 +1,20 @@
 from github import Github
 from subprocess import check_output
-# First create a Github instance:
+import os
 
-# using username and password
-g = Github("sahitya.sreebhashyam@gmail.com", "Sahitya@05")
-
-print("hi")
-for repo in g.get_user().get_repos():
-    print(repo.name)
-    if(repo.name=="automation_coding_test"):
-        c=list(repo.get_branches())
-        #print("repo",repo.append(c[1]))
-        print(c)
-        print("latest branch with pull request:",c[-1])
-        pulls = list(repo.get_pulls())
-        print(pulls)
-        print("latest pull request with branch",pulls[0])
-        p = list(pulls[0].get_commits())
-        print("latest commit on branch",p[-1])
-        env.GIT_BRANCH=c[-1]
+g = Github('169302a41ea470dd78ff7c6cbc4adc5fe04e8b3a')
+repo=g.get_repo("sahityasree/automation_coding_test")
+print(repo.name)
+pulls =list(repo.get_pulls(state='open', sort='created', base='master'))
+print("pulls",pulls)
+c=list(repo.get_branches())
+print("branches",c)
+if(pulls):
+    p = list(pulls[0].get_commits())
+    print("commits on pull requests",p)
+    d=str(p[-1]).split("=")[1].strip("()")
+    print("latest commit on pull request",d)
+    os.env('GIT_COMMIT')=d
+    os.env('GIT_BRANCH')=d
+else:
+    print("no pull requests raised")
