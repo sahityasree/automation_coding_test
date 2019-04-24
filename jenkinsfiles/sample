@@ -1,12 +1,10 @@
 pipeline {
     agent { docker { 
-        // label 'superstudy'
-        image 'pradeepinmar/ss_devops'
-        args '-u root:sudo -v $HOME'} }
+        image '3.8-rc-slim-stretch'
+       } }
     
     parameters {
   
-
     string(name: 'GIT_BRANCH',
             description: 'Set the Git Branch to deoploy',
             defaultValue: 'master')
@@ -20,15 +18,13 @@ pipeline {
  
     stages {
         stage('checkout') {
-            
-            steps {
-                git branch: '${GIT_BRANCH}', url: 'git@github.com:sahityasree/automation_coding_test.git'
-                //checkout([$class: 'GitSCM', branches: [[name: '*/${GIT_BRANCH}']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'svcjenkins-inmar', url: 'https://github.com/inmar/superstudy-ui.git']]])
-            }
+		steps {
+                	git branch: '${GIT_BRANCH}', url: 'git@github.com:sahityasree/automation_coding_test.git'
+			}
         }
-		stage('run python') {
-			steps {
-				python git.py
+	stage('run python') {
+		steps {
+			python git.py
 			}
 		}	
        
