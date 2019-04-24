@@ -27,13 +27,5 @@ pipeline {
 		}	
        
     }  //stages
-    post {
-           always {
-            script {
-                cleanWs deleteDirs: true
-            } //script
-           } //always
-
-   
-    } // post
+ 
 }
