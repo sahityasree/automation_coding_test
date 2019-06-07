@@ -9,6 +9,7 @@ pulls =list(repo.get_pulls(state='open', sort='created', base='master'))
 print("pulls",pulls)
 c=list(repo.get_branches())
 print("branches",c)
+print("hi")
 if(pulls):
     p = list(pulls[0].get_commits())
     print("commits on pull requests",p)
