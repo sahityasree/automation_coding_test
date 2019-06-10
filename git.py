@@ -17,7 +17,7 @@ if(pulls):
     print("latest commit on pull request",d)
     os.env('GIT_COMMIT')=d
     os.env('GIT_BRANCH')=d
-    print("hi")
+    print("hi1")
 else:
     print("no pull requests raised")
     print("")
