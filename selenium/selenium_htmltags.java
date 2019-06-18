@@ -12,7 +12,7 @@ public class tags {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
+		//ff
 		System.setProperty("webdriver.gecko.driver","C://Users/Admin/Desktop/sahitya/projects/selenium/geckodriver-v0.23.0-win64/geckodriver.exe");
 		WebDriver driver= new FirefoxDriver();
 		driver.get("http://www.inmar.com");
