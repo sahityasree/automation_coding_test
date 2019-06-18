@@ -17,6 +17,7 @@ print(dir(li))
 """Call dir() with the dictionary name "d" as parameter. Return all the available dict methods in the  
 current local scope """
 print(dir(dic))
+print("")
 
 class School: 
     def __dir__(self): 
