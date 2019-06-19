@@ -16,6 +16,7 @@ public class waits {
 		    before it throws a "No Such Element Exception". 
 		 * The default setting is 0. Once we set the time, web driver will wait for that 
 		   time before throwing an exception.
+		   nd
 		 */
 		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS) ;//implicitly wait for 20 seconds
 		
