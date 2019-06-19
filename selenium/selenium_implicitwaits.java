@@ -21,7 +21,6 @@ public class waits {
 		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS) ;//implicitly wait for 20 seconds
 		
 		
-		
 		String eTitle = "Advanced Technology and Data Analytics for Intelligent Commerce - Inmar";
 	    String actualTitle = "" ;
 		driver.get("https://www.inmar.com/" );
