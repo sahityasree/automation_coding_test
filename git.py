@@ -21,3 +21,4 @@ if(pulls):
 else:
     print("no pull requests raised")
     print("")
+    print("")
