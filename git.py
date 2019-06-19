@@ -18,3 +18,4 @@ if(pulls):
     os.env('GIT_BRANCH')=d
 else:
     print("no pull requests raised")
+    print("")
