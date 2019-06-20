@@ -20,5 +20,4 @@ if(pulls):
     print("hi")
 else:
     print("no pull requests raised")
-    print("")
-    print("")
+    
