@@ -26,7 +26,7 @@ public class selenium_newbrowsertab {
 		//driver.findElement(By.xpath("//button[contains(.,label)]")).click();
 		System.out.println("page is navigated");
 		Set<String> handles=driver.getWindowHandles();
-		//System.out.println("the titles after button clicked");
+		//System.out.println("the titles after button clicked")
 		
 		for(String handle : handles)
 		{	System.out.println("browser handle is: " +handle);
