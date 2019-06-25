@@ -33,4 +33,5 @@ val = [
 mycursor.executemany(sql, val)
 
 mydb.commit()
+print("hi")
 print(mycursor.rowcount, "was inserted.")
