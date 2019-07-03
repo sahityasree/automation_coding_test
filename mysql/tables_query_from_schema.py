@@ -23,6 +23,7 @@ mycursor = mydb.cursor()
 #mycursor.execute("select * from employees")
 
 #mycursor.execute("select * from employees")
+#print("")
 
 
 mycursor.execute("select DISTINCT e.last_name,t.title,e.gender,e.hire_date,d.dept_name,concat(e.first_name, ' ',e.last_name) as dept_manager_name,t.title as manager_title from employees e,departments d,dept_manager dm,dept_emp ed,titles t where e.emp_no=t.emp_no AND e.emp_no=dm.emp_no AND d.dept_no=dm.dept_no AND d.dept_no=ed.dept_no");
