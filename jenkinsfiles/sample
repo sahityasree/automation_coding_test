@@ -10,7 +10,7 @@ pipeline {
 	
     	string(name: 'GIT_COMMIT',
 		description: 'Set the Git Branch to deoploy',
-		defaultValue: 'none')
+		defaultValue: '')
 	
   } // parameters
  
